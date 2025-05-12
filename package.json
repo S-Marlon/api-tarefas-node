@@ -1,0 +1,22 @@
+{
+  "name": "api-tarefas-node",
+  "version": "1.0.0",
+  "description": "Descrição: Criar uma API REST com NodeJS e Express para gerenciar tarefas (CRUD).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Erro: no test specified\" && exit 1",
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "mysql2": "^3.14.1",
+    "sequelize": "^6.37.7",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.4"
+  }
+}
