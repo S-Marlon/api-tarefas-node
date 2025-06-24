@@ -38,7 +38,8 @@ Extras sugeridos: Bootstrap para visual bonito
 
 ## 📦 Estrutura Completa — Node.js + React (frontend separado)
 
-taskflow/
+```bash
+Api-tarefas Node/
 ├── backend/                # API REST com Node.js + Express
 │   ├── controllers/        # Lógica das rotas (funções de controle)
 │   │   └── taskController.js
@@ -69,7 +70,7 @@ taskflow/
 ├── .gitignore
 ├── package.json            # Dependências do Node.js backend
 └── README.md
-
+```
 
 ## 🔧 Tecnologias
 ### Backend:
