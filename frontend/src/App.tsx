@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+import './static/_css/App.css'
+import { Wrap } from './components/wrap'
 
 type Titleprompps = {
   children: React.ReactNode 
@@ -24,23 +25,6 @@ const Title = ( {children, size}: Titleprompps ) => {
   )
 };
 
-const Tarefas = ( {children}: Titleprompps ) => {
-  return (
-    <>
-    
-      <div>
-        <h2>Minhas Tarefas</h2>
-        <ul>
-          <li>Tarefa 1</li>
-          <li>Tarefa 2</li>
-          <li>Tarefa 3</li>
-        </ul>
-      </div>
-    
-  </>
-  )
-};
-
 function App() {
   
   return (
@@ -48,17 +32,24 @@ function App() {
       <Title size = 'large'>
         Gestor de Tarefas      
       </Title>
-
-      <Tarefas>
-        <h2>Minhas Tarefas</h2>
-        <ul>
-          <li>Tarefa 1</li>
-          <li>Tarefa 2</li>
-          <li>Tarefa 3</li>
-        </ul>
-      </Tarefas>
+      
+      <Wrap/>
+      
     </>
   )
 }
 
 export default App
+
+// ## 🧩 Funcionalidades principais:
+// ✅ Criar tarefa (POST)
+
+// 📋 Listar todas as tarefas (GET)
+
+// ✏️ Editar tarefa (PUT)
+
+// ❌ Deletar tarefa (DELETE)
+
+// 🔄 Marcar como concluída
+
+// 🗃️ Filtro por status (pendente, concluída)

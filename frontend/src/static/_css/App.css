@@ -40,3 +40,26 @@
 .read-the-docs {
   color: #888;
 }
+
+.wrap-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ; /* Adjust as needed */
+    gap: 2rem;
+    align-items: start;
+}
+
+.tasks {
+    background-color: rgba(251, 255, 0, 0.212);
+    border : 2px solid #000000;
+    border-radius: 3px;
+    border-right: 4px solid #000000;
+    border-bottom: 4px solid #000000;
+}
+
+.tasksv {
+    background-color: rgba(72, 255, 0, 0.212);
+    border : 2px solid #000000;
+    border-radius: 3px;
+    border-right: 4px solid #000000;
+    border-bottom: 4px solid #000000;
+}
