@@ -1,9 +1,14 @@
-import { openDb } from './db/database.js';
+import { openDb } from './src/db/configDB.js';
 import express from'express';
 import cors from 'cors';
 const app = express();
 
-import taskRoutes from './routes/task.js';
+import createTable from './src/controller/tarefas.js';
+
+import taskRoutes from './src/routes/task.js';
+import { create } from 'domain';
+
+createTable(); // Cria a tabela de tarefas se não existir
 
 openDb().then(() => {
     console.log('Banco de dados conectado com sucesso!');
@@ -12,7 +17,6 @@ openDb().then(() => {
     console.error('Erro ao conectar ao banco de dados:', error);
   });
  
-
   
 const PORT = process.env.PORT || 3001;
 
