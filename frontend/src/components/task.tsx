@@ -1,47 +1,35 @@
 
-export const Tasks = () => {
+
+
+type textProps = {
+    Titulo : string;
+    Texto: string;
+    Status: string;
+    DataCriacao: string;
+}
+
+
+
+// const Title = ( {children, size}: Titleprompps ) => {
+
+export const Tasks = ( {Titulo,Texto,Status,DataCriacao}: textProps ) => {
     return (
         <>
 
         <div className="tasks">
-            <h3>titulo da tarefa</h3>
+            <h3>{Titulo}</h3>
 
-            <p>descrição da tarefa</p>
+            <p>{Texto}</p>
 
-            <p>Status: Pendente</p>
-            <p>Data de criação: 01/01/2023</p>
-        </div>
-
-        <div className="tasks">
-            <h3>titulo da tarefa</h3>
-
-            <p>descrição da tarefa</p>
-
-            <p>Status: Pendente</p>
-            <p>Data de criação: 01/01/2023</p>
-        </div>
-
-        <div className="tasksv">
-            <h3>titulo da tarefa</h3>
-
-            <p>descrição da tarefa</p>
-
-            <p>Status: Pendente</p>
-            <p>Data de criação: 01/01/2023</p>
-        </div>
-
-        <div className="tasksv">
-            <h3>titulo da tarefa</h3>
-
-            <p>descrição da tarefa</p>
-
-            <p>Status: Pendente</p>
-            <p>Data de criação: 01/01/2023</p>
+            <p>Status: {Status}</p>
+            <p>Data de criação: {DataCriacao}</p>
         </div>
 
         </>
     );
 };
+
+
 
 // ## 🧩 Funcionalidades principais:
 // ✅ Criar tarefa (POST)

@@ -34,3 +34,30 @@ export async function insertTask(titulo,descricao){
         console.error("Erro ao criar tarefa:", error);
     }
 }
+
+export async function alterTask(titulo,descricao, status, id) {
+    try {
+        openDb().then(db => (
+            db.run(`ALTER TABLE tarefa (id, titulo, descricao, status) VALUES (?, ?, ?, ?)`, [id, titulo, descricao, status])
+        ).then(() => {
+            console.log("Tarefa alterada com sucesso!");
+        }).catch((error) => {
+            console.error("Erro ao alterar tarefa:", error);
+        }));
+    } catch (error) {
+        console.error("Erro ao alterada tarefa:", error);
+    }
+}
+
+export async function getTask() {
+    try {
+        const db = await openDb();
+        const listatarefa = await db.all(`SELECT * FROM tarefa`);
+        return listatarefa; 
+    } catch (error) {
+        console.error("Erro ao obter tarefas:", error);
+        throw error; // Re-throw the error to handle it in the calling function
+    }
+    
+}
+
