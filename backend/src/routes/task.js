@@ -24,8 +24,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-
-
 //---------- Rota para criar tarefas ----------//
 
 router.post('/create', (req, res) => {
@@ -49,7 +47,6 @@ if (req.body === undefined){
 });
 
 
-
 //---------- Rota para atualizar tarefas ----------//
 
 router.put('/alter/:id', (req, res) => {
@@ -58,14 +55,12 @@ router.put('/alter/:id', (req, res) => {
 });
 
 
-
 //---------- Rota para excluir tarefas ----------//
 
 router.delete('/delete/:id', (req, res) => {
   // Lógica para excluir uma tarefa
   log('Excluindo a tarefa com ID:', req.params.id);
 });
-
 
 
 export default router;

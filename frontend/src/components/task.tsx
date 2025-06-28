@@ -17,12 +17,21 @@ export const Tasks = ( {Titulo,Texto,Status,DataCriacao}: textProps ) => {
         <>
 
         <div className="tasks">
-            <h3>{Titulo}</h3>
+            
+            <div className="task-content">
+            
+                <h3>{Titulo}</h3>
 
-            <p>{Texto}</p>
+                <p>{Texto}</p>
 
-            <p>Status: {Status}</p>
-            <p>Data de criação: {DataCriacao}</p>
+                <p>Status: {Status}</p>
+                <p>Data de criação: {DataCriacao}</p>
+            </div>
+            <div className="task-buttons">
+                <button className="btn-editar">Editar</button>
+                <button className="btn-deletar">Deletar</button>
+                {/* <button className="btn-concluir">Concluir</button> */}
+            </div>
         </div>
 
         </>

@@ -43,23 +43,92 @@
 
 .wrap-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr ; /* Adjust as needed */
+    grid-template-columns: 1fr 1fr 1fr  ; /* Adjust as needed */
     gap: 2rem;
     align-items: start;
 }
 
 .tasks {
     background-color: rgba(251, 255, 0, 0.212);
-    border : 2px solid #000000;
+    border: 2px solid #000000;
     border-radius: 3px;
     border-right: 4px solid #000000;
     border-bottom: 4px solid #000000;
+    display: flex;
+    flex-direction: column;
+    min-height: 220px;
+    max-height: 220px;
+    overflow: hidden;
 }
 
-.tasksv {
-    background-color: rgba(72, 255, 0, 0.212);
-    border : 2px solid #000000;
-    border-radius: 3px;
-    border-right: 4px solid #000000;
-    border-bottom: 4px solid #000000;
+.task-content {
+    flex: 1 1 0;
+    padding: 1rem;
+    overflow: hidden; /* Só o conteúdo pode "sumir" */
+}
+
+.task-buttons {
+    grid-area: footer;
+    display: flex;
+    flex-direction: row;    /* Botões lado a lado */
+    gap: 0px;               /* Espaço entre os botões */
+    padding: 0rem;
+}
+
+.btn-editar,
+.btn-deletar {
+    background-color: #272b27;
+    border: none;
+    color: white;
+    width: 100%;            /* Ocupa toda a largura do pai flexível */
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: 0;              /* Remove margem vertical */
+    cursor: pointer;
+    border-radius: 0px;
+    box-sizing: border-box;
+    flex: 1 1 ;            /* Ocupa espaço igual dentro do flex */
+}
+@media (max-width: 900px) {
+    .btn-editar,
+.btn-deletar{
+        font-size: 16px;
+    }
+}@media (max-width: 600px) {
+    .btn-editar,
+.btn-deletar{
+        font-size: 11px;
+    }
+}@media (max-width: 400px) {
+    .btn-editar,
+.btn-deletar{
+        font-size: 9px;
+    }
+}
+
+.btn-editar:hover,
+.btn-deletar:hover{
+    background-color: #646cff;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.task-content h3,
+.task-content p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    display: block;
+}
+
+.task-content p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;      /* Número de linhas antes de cortar */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
 }

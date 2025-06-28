@@ -1,5 +1,6 @@
 import { Form } from "./form"
-import { Tasks } from "./task"
+
+import { TaskList } from "./taskList"
 
 
 
@@ -16,14 +17,14 @@ export const Wrap = () => {
         buscar: <input type="text" placeholder="pesquisar tarefa" />
         <button>buscar</button> - - --- - -
         filtro:  <button>pendente</button><button>concluída</button>
+    
+    
     <div className="wrap-grid">
     
-    <Tasks 
-    Titulo="Minha Primeira Tarefa"
-    Texto="Estudar React"
-    Status="Pendente"
-    DataCriacao="27/06/2025"
-/>
+    
+    <TaskList />
+    
+    
 
     </div>
     </div>

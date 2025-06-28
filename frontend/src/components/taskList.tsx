@@ -9,29 +9,32 @@ type TaskType = {
     data_criacao: string;
 };
 
-
-
 export const TaskList = () => {
     const [tarefas, setTarefas] = useState<TaskType[]>([]);
+const [erro, setErro] = useState<string | null>(null);
 
     useEffect(() => {
         fetch("http://localhost:3001/api/tasks/")
             .then(res => res.json())
             .then(data => setTarefas(data.tasks))
-            .catch(err => console.error(err));
+            .catch(err => {
+            setErro("Erro ao conectar com o backend");
+            console.error(err);
+    });
     }, []);
 
     return (
-        <div>
-            {tarefas.map(tarefa => (
-                <Tasks
-                    key={tarefa.id}
-                    Titulo={tarefa.titulo}
-                    Texto={tarefa.descricao}
-                    Status={tarefa.status}
-                    DataCriacao={tarefa.data_criacao}
-                />
-            ))}
-        </div>
-    );
+    <>
+        {erro && <p>{erro}</p>}
+        {tarefas.map(tarefa => (
+            <Tasks
+                key={tarefa.id}
+                Titulo={tarefa.titulo}
+                Texto={tarefa.descricao}
+                Status={tarefa.status}
+                DataCriacao={tarefa.data_criacao}
+            />
+        ))}
+    </>
+);
 };
