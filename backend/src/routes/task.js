@@ -1,10 +1,8 @@
 import { log } from 'console';
 import { Router } from 'express';
-import { getTask, insertTask } from '../controller/tarefas.js';
-
+import { getTask, insertTask, deleteTask} from '../controller/tarefas.js';
 
 const router = Router();
-
 
 //---------- Rota para obter a lista de tarefas ----------//
 
@@ -46,7 +44,6 @@ if (req.body === undefined){
 
 });
 
-
 //---------- Rota para atualizar tarefas ----------//
 
 router.put('/alter/:id', (req, res) => {
@@ -54,13 +51,23 @@ router.put('/alter/:id', (req, res) => {
   log('Atualizando a tarefa com ID:', req.params.id, 'com os dados:', req.body);
 });
 
-
 //---------- Rota para excluir tarefas ----------//
 
 router.delete('/delete/:id', (req, res) => {
   // Lógica para excluir uma tarefa
   log('Excluindo a tarefa com ID:', req.params.id);
+  deleteTask(req.params.id)
+    .then(() => {
+      res.send({
+        message: "Tarefa excluída com sucesso!"
+      });
+    })
+    .catch((error) => {
+      res.status(500).send({
+        message: "Erro ao excluir tarefa",
+        error: error.message
+      });
+    });
 });
-
 
 export default router;

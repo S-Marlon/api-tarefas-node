@@ -28,7 +28,7 @@ const [erro, setErro] = useState<string | null>(null);
         {erro && <p>{erro}</p>}
         {tarefas.map(tarefa => (
             <Tasks
-                key={tarefa.id}
+                Id={tarefa.id}
                 Titulo={tarefa.titulo}
                 Texto={tarefa.descricao}
                 Status={tarefa.status}

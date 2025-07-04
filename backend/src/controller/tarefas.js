@@ -61,3 +61,13 @@ export async function getTask() {
     
 }
 
+export async function deleteTask(id){
+    try {
+        const db = await openDb();
+        await db.run(`DELETE FROM tarefa WHERE id = ?`, [id]);
+        console.log("Tarefa deletada com sucesso!");
+    } catch (error) {
+        console.error("Erro ao deletar tarefa:", error);
+        throw error; // Re-throw the error to handle it in the calling function
+    }
+} 

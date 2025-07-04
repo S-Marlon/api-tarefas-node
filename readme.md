@@ -32,7 +32,7 @@ Backend: Node.js + Express
 
 Banco de dados: SQLite (simples) ou MySQL
 
-Testes de API: Postman
+Testes de API: Insomnia
 
 Extras sugeridos: Bootstrap para visual bonito
 

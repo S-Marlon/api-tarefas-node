@@ -75,8 +75,7 @@
     padding: 0rem;
 }
 
-.btn-editar,
-.btn-deletar {
+.btn-editar,.btn-deletar {
     background-color: #272b27;
     border: none;
     color: white;
@@ -108,15 +107,13 @@
     }
 }
 
-.btn-editar:hover,
-.btn-deletar:hover{
+.btn-editar:hover,.btn-deletar:hover{
     background-color: #646cff;
     color: white;
     transition: background-color 0.3s ease;
 }
 
-.task-content h3,
-.task-content p {
+.task-content h3,.task-content p {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
